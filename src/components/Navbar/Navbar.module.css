@@ -1,0 +1,48 @@
+/** @format */
+
+/* src/index.css or src/App.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body, #root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Navbar.module.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 31px;
+  width: 418px;
+  margin-left: -7px;
+  background-color: #EFFFF0;
+  margin-top: -7px;
+}
+
+.logo {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: #111;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.menuIcon {
+  width: 40px;
+  height: 30px;
+  padding-left: 10px;
+}
