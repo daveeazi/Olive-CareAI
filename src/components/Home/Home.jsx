@@ -33,7 +33,7 @@ export default function Home() {
         {/* Description */}
         <p className={styles.description}>
           Talk to licensed doctors, nurses and check your lab results via
-          WhatsApp no queues, no <br /> stress.
+          WhatsApp no queues, <br /> no stress.
         </p>
       </div>
 
