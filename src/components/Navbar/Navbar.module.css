@@ -15,16 +15,38 @@ html, body, #root {
   overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+:root {
+    --status-bar-height: env(safe-area-inset-top);
+}
+
+.status-bar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--status-bar-height);
+    background-color: #EFFFF0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
 /* Navbar.module.css */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 31px;
-  width: 390px;
-  margin-left: -7px;
+  width: 100%;
+  position: fixed;
+  /* margin-left: -7px; */
   background-color: #EFFFF0;
   margin-top: -7px;
+  z-index: 10;
+}
+
+@media (max-width: 412px) {
+  .navbar {
+    width: 420px;
+  }
 }
 
 .logo {
@@ -45,4 +67,10 @@ html, body, #root {
   width: 40px;
   height: 30px;
   padding-left: 10px;
+}
+
+@media (max-width: 360px) {
+  .menuIcon {
+    margin-right: 30px;
+  }
 }

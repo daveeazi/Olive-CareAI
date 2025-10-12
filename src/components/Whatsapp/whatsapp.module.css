@@ -1,0 +1,140 @@
+/* @format */
+
+.whatsappSection {
+  padding: 24px 0;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  padding-top: 35px;
+  /* padding-bottom: 1135px; */
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselItem {
+  display: none;
+}
+
+.carouselItem.active {
+  display: block;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+.title span {
+  color: #2e7d32;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* WhatsApp card */
+.card {
+  background-color: #f4faff;
+  border-radius: 16px;
+  padding: 16px;
+  width: 329px;
+  height: 180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.textContent {
+  text-align: left;
+  flex: 1;
+  z-index: 2;
+}
+
+.chatTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+  max-width: 180px;
+}
+
+.ctaButton {
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ctaButton:hover {
+  text-decoration: underline;
+}
+
+/* Phone image + background shape */
+.imageContainer {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  z-index: 1;
+}
+
+.imageContainer::before {
+  content: "";
+  position: absolute;
+  width: 125px;
+  height: 85px; /* half the width for a perfect 180° arc */
+  background-color: #86C4FB;
+  border-top-left-radius: 130px;
+  border-top-right-radius: 130px;
+  bottom: 0;
+  right: -20px;
+  z-index: 0;
+}
+
+.whatsappImage {
+  width: 75px;
+  height: 137px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 12px;
+}
+
+/* Dots */
+.carouselControls {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.controlButton {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controlButton.active {
+  background-color: #2e7d32;
+}
