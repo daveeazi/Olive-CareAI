@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.testimonialSection {
+  background-color: #dfe2df;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 31px 0 35px;
+  font-family: Inter, sans-serif;
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+
+.titleSphere {
+  display: inline-block;
+  border: 1px solid #4CAF50;
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Manrope', sans-serif;
+  color: #000;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+/* Wrapper */
+.wrapperBox {
+  width: 335px;
+  height: 207px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+/* Viewport */
+.viewport {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Each Card */
+.card {
+  flex: 0 0 calc(100% / 3 - 8px); /* Fit all 3 cards */
+  height: 180px;
+  border-radius: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  transition: transform 0.4s ease;
+}
+
+.image {
+  width: 95px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.text {
+  font-size: 7px;
+  font-weight: 400;
+  line-height: 100%;
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 8px;
+  white-space: pre-wrap;
+  color: #4C4B4B;
+}
+
+.name {
+  font-size: 7px;
+  font-weight: 600;
+  line-height: 100%;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: #4C4B4B;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 335px;
+  margin-top: 12px;
+}
+
+.arrowBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.arrowBtn img {
+  width: 21px;
+  height: 21px;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 7.2px;
+  height: 7.2px;
+  border-radius: 50%;
+  background-color: #cccbcb;
+}
+
+.activeDot {
+  background-color: #ffffff;
+  border: 0.88px solid #b3e3d9;
+}
+
+/* Bounce */
+.bounce {
+  animation: bounceAnim 0.4s ease;
+}
+
+@keyframes bounceAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 375px) {
+  .wrapperBox {
+    width: 335px;
+    height: 207px;
+  }
+
+  .card {
+    width: 65px;
+    height: 170px;
+  }
+
+  .controls {
+    width: 335px;
+    gap: 16px;
+  }
+}

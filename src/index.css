@@ -19,6 +19,16 @@ html {
     display: none; /* Chrome, Safari, and other WebKit browsers */
 }
 
+/** @format */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Extend navbar color behind status bar */
+body {
+  padding-top: env(safe-area-inset-top, 70px); /* Adjusts for status bar height on iOS/Android */
+  background-color: #EFFFF0; /* Matches notification bar color */
+}
+
 /* Mobile-specific reset to avoid scrollbar */
 @media (max-width: 767px) {
   body {

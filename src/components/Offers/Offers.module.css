@@ -8,7 +8,7 @@
   padding: 40px 16px;
   background-color: #ffffff;
   font-family: 'Manrope', sans-serif;
-  padding-bottom: 1111px;
+  /* padding-bottom: 1111px; */
 }
 
 /* Ellipse Title */
@@ -92,4 +92,10 @@
   font-family: 'Inter', sans-serif;
   color: #373737;
   line-height: 1.4;
+}
+
+@media (min-width: 360px) and (max-width: 380px) {
+    .offerCard {
+    width: 167px;
+    }
 }

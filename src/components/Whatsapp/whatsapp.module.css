@@ -74,9 +74,10 @@
 }
 
 .ctaButton {
-  color: #2e7d32;
-  font-weight: 600;
-  font-size: 14px;
+  color: #10530C;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
   border: none;
   background: none;
   cursor: pointer;
