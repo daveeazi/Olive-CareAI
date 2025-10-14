@@ -1,7 +1,7 @@
 /** @format */
 
 import { useState, useEffect } from "react";
-import styles from "./whatsapp.module.css";
+import styles from "./Whatsapp.module.css";
 import whatsappImage from "../../assets/whatsapp.png";
 
 const Whatsapp = () => {
