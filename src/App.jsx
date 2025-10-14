@@ -1,7 +1,7 @@
 /** @format */
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
-import Whatsapp from './components/Whatsapp/Whatsapp';
+import Whatsapp from './components/Whatsapp/Whatsappp';
 import Offers from './components/Offers/Offers';
 import Footer from './components/Footer/Footer';
 import Faq from './components/Faq/Faq';
