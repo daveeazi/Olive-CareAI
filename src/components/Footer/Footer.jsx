@@ -1,7 +1,7 @@
 /** @format */
 
 import styles from "./Footer.module.css";
-import blocks from "../../assets/blocks.png"; // background image
+// import blocks from "../../assets/blocks.png";
 
 const Footer = () => {
   return (
