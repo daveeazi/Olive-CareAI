@@ -177,9 +177,8 @@
   }
 }
 
-@media (max-width: 414px) and (min-width: 490px) {
-  .wrapperBox {
-    width: 335px;
-    height: 207px;
+@media (min-width: 414px) and (max-width: 490px) {
+  .card {
+    width: 77px;
   }
 }
