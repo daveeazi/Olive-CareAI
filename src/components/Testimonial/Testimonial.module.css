@@ -176,3 +176,10 @@
     gap: 16px;
   }
 }
+
+@media (max-width: 414px) and (min-width: 490px) {
+  .wrapperBox {
+    width: 335px;
+    height: 207px;
+  }
+}
