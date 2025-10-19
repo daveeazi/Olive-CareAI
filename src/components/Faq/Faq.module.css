@@ -129,3 +129,80 @@
     font-size: 11px;
   }
 }
+
+/* 🟦 Shared animation styles — works on mobile + desktop */
+.answerWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.answerWrapper.open {
+  max-height: 500px; /* large enough for all answers */
+  opacity: 1;
+}
+
+/* 🖥️ Desktop Responsive Section */
+@media screen and (min-width: 900px) {
+  .faqSection {
+    padding: 80px 0;
+  }
+
+  .titleSphere {
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 40px;
+    border: 2px solid #b3e3d9;
+    margin-bottom: 28px;
+  }
+
+  .mainHeading {
+    font-size: 40px;
+    line-height: 110%;
+    margin-bottom: 12px;
+  }
+
+  .subHeading {
+    font-size: 21px;
+    max-width: 650px;
+    margin-bottom: 50px;
+  }
+
+  .faqList {
+    gap: 22px;
+  }
+
+  .faqBox {
+    width: 740px;
+    padding: 15px 25px;
+    gap: 15px !important;
+    border-radius: 20px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  .faqBox.active {
+    background-color: #fafff6;
+  }
+
+  .questionRow {
+    padding: 10px 0;
+  }
+
+  .question {
+    font-size: 20px;
+  }
+
+  .arrowIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .answer {
+    font-size: 19px;
+    margin-top: 14px;
+    line-height: 130%;
+  }
+}
+
+

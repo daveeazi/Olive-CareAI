@@ -1,9 +1,7 @@
 /** @format */
-
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Testimonial.module.css";
 
-// ✅ Assets from src/assets
 import leftArrow from "../../assets/leftarrow.png";
 import rightArrow from "../../assets/rightarrow.png";
 import img1 from "../../assets/image1.png";
@@ -41,63 +39,79 @@ health risks.`,
 ];
 
 export default function Testimonial() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(1); // start from first real card
+  const [transitioning, setTransitioning] = useState(true);
   const total = testimonials.length;
 
-  // Duplicate ends for infinite effect
+  // Clone first and last slides for smooth infinite effect
   const extendedTestimonials = [
     testimonials[total - 1],
     ...testimonials,
     testimonials[0],
   ];
 
+  const viewportRef = useRef(null);
+
+  // ---- Navigation handlers ----
   const handleNext = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
+    if (!transitioning) return;
     setActiveIndex((prev) => prev + 1);
-    setTimeout(() => setIsAnimating(false), 500);
   };
 
   const handlePrev = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
+    if (!transitioning) return;
     setActiveIndex((prev) => prev - 1);
-    setTimeout(() => setIsAnimating(false), 500);
   };
 
-// Auto scroll (removed)
-//   useEffect(() => {
-//     const auto = setInterval(handleNext, 5000);
-//     return () => clearInterval(auto);
-//   }, []);
-
-  // Swipe Gesture
+  // ---- Swipe gestures ----
   const touchStart = useRef(0);
   const touchEnd = useRef(0);
 
   const onTouchStart = (e) => (touchStart.current = e.touches[0].clientX);
   const onTouchEnd = (e) => {
     touchEnd.current = e.changedTouches[0].clientX;
-    if (touchStart.current - touchEnd.current > 40) handleNext();
-    else if (touchEnd.current - touchStart.current > 40) handlePrev();
+    const distance = touchStart.current - touchEnd.current;
+    if (distance > 40) handleNext();
+    else if (distance < -40) handlePrev();
   };
 
-  // Reset index for seamless infinite scroll
-  const viewportRef = useRef(null);
+  // ---- Infinite scroll logic ----
   useEffect(() => {
-    if (activeIndex === total + 1) {
-      setTimeout(() => {
-        setIsAnimating(false);
-        setActiveIndex(1);
-      }, 500);
-    } else if (activeIndex === 0) {
-      setTimeout(() => {
-        setIsAnimating(false);
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const handleTransitionEnd = () => {
+      setTransitioning(true);
+
+      if (activeIndex === 0) {
+        // jump instantly to last real slide
+        viewport.style.transition = "none";
         setActiveIndex(total);
-      }, 500);
-    }
+        requestAnimationFrame(() => {
+          viewport.style.transition = "transform 0.5s ease-in-out";
+        });
+      } else if (activeIndex === total + 1) {
+        // jump instantly to first real slide
+        viewport.style.transition = "none";
+        setActiveIndex(1);
+        requestAnimationFrame(() => {
+          viewport.style.transition = "transform 0.5s ease-in-out";
+        });
+      }
+    };
+
+    viewport.addEventListener("transitionend", handleTransitionEnd);
+    return () => viewport.removeEventListener("transitionend", handleTransitionEnd);
   }, [activeIndex, total]);
+
+  // ---- Auto-scroll control (optional) ----
+  // useEffect(() => {
+  //   const timer = setInterval(() => handleNext(), 5000);
+  //   return () => clearInterval(timer);
+  // }, []);
+
+  // ---- Transform calculation ----
+  const translateX = `translateX(-${activeIndex * (100 / extendedTestimonials.length)}%)`;
 
   return (
     <section
@@ -115,13 +129,11 @@ export default function Testimonial() {
       <div className={styles.wrapperBox}>
         <div
           ref={viewportRef}
-          className={`${styles.viewport} ${styles.bounce}`}
+          className={styles.viewport}
           style={{
-            transform: `translateX(-${activeIndex * (100 / extendedTestimonials.length)}%)`,
             width: `${extendedTestimonials.length * 100}%`,
-            transition: isAnimating
-              ? "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-              : "none",
+            transform: translateX,
+            transition: "transform 0.5s ease-in-out",
           }}
         >
           {extendedTestimonials.map((t, i) => (
@@ -156,9 +168,7 @@ export default function Testimonial() {
             <span
               key={i}
               className={`${styles.dot} ${
-                (activeIndex - 1 + total) % total === i
-                  ? styles.activeDot
-                  : ""
+                activeIndex === i + 1 ? styles.activeDot : ""
               }`}
             />
           ))}

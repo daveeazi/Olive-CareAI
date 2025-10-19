@@ -88,3 +88,128 @@
   margin-top: 6px;
 }
 
+/* Desktop Footer Styles */
+
+@media (min-width: 900px) {
+  .footerDeskWrapper {
+    background-color: #013123;
+    background-image: url("../../assets/blocks.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 120px; /* reduced block size */
+    /* border-radius: 35px;
+    margin: 0 60px 40px 60px; */
+    color: #ffffff;
+    text-align: center;
+    padding: 45px 0 30px;
+    position: relative;
+    overflow: hidden;
+    /* height: 70px; */
+  }
+
+  /* Center background logo (logobg.png) */
+  .footerDeskBgLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(/Olive-CareAI/src/assets/logobg.png);
+    background-size: 441px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 500px;
+    height: 500px;
+    opacity: 0.5;
+  }
+
+  /* OlivecareAI logo (top-right corner) */
+  .footerDeskTopLogo {
+    position: absolute;
+    top: 36px;
+    left: 45px;
+    width: 65px;
+    height: auto;
+    z-index: 2;
+  }
+
+  /* Footer Logo title */
+  .logoTitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: #D9D9D9;
+    position: absolute;
+    top: 95px;
+    left: 29px;
+    margin-top: 5px;
+    z-index: 3;
+  }
+
+  /* Main text and button */
+  .footerDeskContent {
+    position: relative;
+    z-index: 2;
+  }
+
+  .footerDeskContent h2 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 45px; 
+    line-height: 111%;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .footerDeskContent p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .footerDeskContent button {
+    background-color: #70ffa0;
+    color: #013123;
+    border: none;
+    padding: 15px 33px;
+    border-radius: 15px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .footerDeskContent button:hover {
+    opacity: 0.85;
+  }
+
+  /* Bottom row */
+  .footerDeskBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    margin: 60px 100px 20px 100px;
+  }
+
+  .footerDeskLine {
+    width: 90%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 auto 20px auto;
+  }
+
+  .footerDeskCopy {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0.9;
+  }
+}

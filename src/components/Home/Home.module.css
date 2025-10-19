@@ -3,6 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 
+/* Hide scrollbar for all elements while allowing scrolling */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer & Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and other WebKit browsers */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -26,6 +40,7 @@
   align-items: center;
   text-align: center;
   position: relative;
+  margin-top: 65px;
 }
 
 .title {
@@ -106,3 +121,134 @@
   background-color: #4CFF8C;
 }
 
+/* Desktop Responsiveness */
+@media (min-width: 900px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-image: url("../../assets/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    padding: 0;
+  }
+  .logo {
+    display: flex;
+    flex-direction: column; /* Stack logo and title vertically */
+    align-items: flex-start; /* Align to the left */
+    position: absolute;
+    top: 43px; /* As specified */
+    left: 64px; /* As specified */
+    transform: none;
+    z-index: 3;
+  }
+  .logoImage{
+    margin-left: 18px;
+  }
+  .logoTitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: #111;
+    margin-top: 5px; /* Small gap below logo */
+  }
+  .aboutUsButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 0;
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    transform: none;
+    z-index: 3;
+  }
+  .aboutButton {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    color: #000000;
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  .aboutButton:hover {
+    color: #013123;
+  }
+  .card {
+    width: 800px;
+    height: 600px;
+    background: transparent;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 120px;
+  }
+  .title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 47px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+  }
+  .features {
+    gap: 120px;
+    z-index: 3;
+    padding-top: 40px;
+  }
+  .featureItem {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 21px;
+    color: #D9EEFF;
+    padding-top: 20px;
+  }
+  .featureItem img {
+    width: 45px;
+    height: 39px;
+  }
+  .imageWrapper {
+    margin: 20px 0;
+  }
+  .manImage {
+    width: 972px;
+    height: 652px;
+    margin-top: -393px;
+    opacity: 92%;
+    z-index: 1;
+  }
+  .description {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 111%;
+    letter-spacing: 0%;
+    color: #D9EEFF;
+    margin: -250px 0 0;
+    padding: 0 20px;
+    padding-top: 40px;
+  }
+  .ctaButton {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    margin-bottom: 3px;
+    /* padding: 15px 30px; */
+    width: 235px;
+    height: 60px;
+    z-index: 10;
+    margin-bottom: 25px !important;
+  }
+}

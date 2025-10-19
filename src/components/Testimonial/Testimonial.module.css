@@ -177,8 +177,13 @@
   }
 }
 
-@media (min-width: 414px) and (max-width: 490px) {
-  .card {
-    width: 77px;
+@media (min-width: 390px){
+.card {
+    width: 67px;
   }
 }
+
+@media (min-width: 414px) and (max-width: 490px) {
+  .card {
+    width: 68px;
+  }}

@@ -64,12 +64,12 @@ const Faq = () => {
                   className={styles.arrowIcon}
                 />
               </button>
-
-              {isOpen && (
-                <p id={`faq-answer-${idx}`} className={styles.answer}>
-                  {item.answer}
-                </p>
-              )}
+              <div
+                id={`faq-answer-${idx}`}
+                className={`${styles.answerWrapper} ${isOpen ? styles.open : ""}`}
+              >
+                <p className={styles.answer}>{item.answer}</p>
+              </div>
             </div>
           );
         })}

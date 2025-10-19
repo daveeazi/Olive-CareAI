@@ -1,7 +1,6 @@
 /** @format */
 
-/* src/index.css or src/App.css */
-
+/* Import font globally if needed */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
@@ -10,27 +9,29 @@
   padding: 0;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
   max-width: 100vw;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 :root {
-    --status-bar-height: env(safe-area-inset-top);
+  --status-bar-height: env(safe-area-inset-top);
 }
 
 .status-bar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--status-bar-height);
-    background-color: #EFFFF0;
-    z-index: 1000; /* Ensure it stays on top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--status-bar-height);
+  background-color: #EFFFF0;
+  z-index: 1000; /* Ensure it stays on top */
 }
 
-/* Navbar.module.css */
+/* ------------------ Navbar Styles ------------------ */
 .navbar {
   display: flex;
   justify-content: center;
@@ -38,7 +39,6 @@ html, body, #root {
   padding: 15px 31px;
   width: 100%;
   position: fixed;
-  /* margin-left: -7px; */
   background-color: #EFFFF0;
   margin-top: -7px;
   z-index: 10;
@@ -50,21 +50,21 @@ html, body, #root {
 
 .logo {
   font-size: 20px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   color: #111;
   display: flex;
-  align-items: center; /* Aligns image and text vertically */
+  align-items: center; /* Vertically align logo image + text */
 }
 
 .logo::before {
   content: '';
-  background-image: url('../../assets/olive.png'); /* Import olive.png */
+  background-image: url('../../assets/olive.png');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 24px; /* Adjust size based on UI */
+  width: 24px;
   height: 24px;
-  margin-right: 8px; /* Space between image and text */
+  margin-right: 8px;
 }
 
 .menuButton {
@@ -80,19 +80,27 @@ html, body, #root {
   padding-left: 10px;
 }
 
-/* @media (min-width: 360px) {
-  .menuIcon {
-    margin-right: 30px;
-  }
-} */
-
+/* --------------- Mobile to Tablet Adjustments --------------- */
 @media (min-width: 412px) {
   .navbar {
-    width: 420px;
+    width: 430px;
   }
+
   .logo span {
     align-items: center;
     text-align: center;
     padding-left: 85px;
+  }
+}
+
+/* --------------- Desktop View (Hide Navbar) --------------- */
+@media (min-width: 900px) {
+  .navbar {
+    display: none;
+    background-color: none;
+  }
+
+  .status-bar-overlay{
+    display: none;
   }
 }
