@@ -1,5 +1,8 @@
 /* @format */
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 .whatsappSection {
   padding: 24px 0;
   text-align: center;
@@ -78,7 +81,7 @@
   color: #10530C;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 13px;
   border: none;
   background: none;
   cursor: pointer;
@@ -139,4 +142,141 @@
 
 .controlButton.active {
   background-color: #2e7d32;
+}
+
+/* 🖥️ Desktop-only styles */
+@media (min-width: 900px) {
+  .whatsappSection {
+    padding: 35px 0;
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    background-color: #ffffff;
+  }
+
+  /* Headings */
+  .title {
+    font-family: 'Manrope', sans-serif;
+    padding-top: 41px;
+    font-weight: 600;
+    color: #303830;
+    font-size: 60.84px;
+    line-height: 100%;
+    text-align: center;
+  }
+
+  .title span {
+    color: #2e7d32;
+  }
+
+  .subtitle {
+    font-weight: 400;
+    font-size: 27px;
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    margin-bottom: 32px;
+    padding-top: 23px;
+  }
+
+  /* Cards container layout */
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-content: center;
+    align-items: start;
+    width: 750px;
+    margin: 0 auto;
+  }
+
+  /* First card spans the full width */
+  .card:first-child {
+    grid-column: 1 / -1;
+    width: 96%;
+    max-width: 940px;
+  }
+
+  .card {
+    background-color: #f4faff;
+    border-radius: 20px;
+    padding: 16px;
+    height: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .textContent {
+    text-align: left;
+    flex: 1;
+    z-index: 2;
+  }
+
+  .chatTitle {
+    font-family: 'Monrope', sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 4px;
+  }
+
+  .description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4C4B4B;
+    margin-bottom: 12px;
+    max-width: 180px;
+  }
+
+  .ctaButton {
+    color: #10530C;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  /* Hover effect */
+  .ctaButton:hover {
+    text-decoration: none;
+    transform: translateX(3px);
+    color: #2e7d32;
+  }
+
+  /* Image section */
+  .imageContainer {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .imageContainer::before {
+    content: "";
+    position: absolute;
+    width: 125px;
+    height: 85px;
+    background-color: #86c4fb;
+    border-top-left-radius: 130px;
+    border-top-right-radius: 130px;
+    bottom: 0;
+    right: -20px;
+    z-index: 0;
+  }
+
+  .whatsappImage {
+    width: 85px;
+    height: 150px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 12px;
+  }
 }
