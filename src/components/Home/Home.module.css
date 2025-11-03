@@ -129,7 +129,7 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: flex-start;
     width: 109%;
-    background-image: url(/Olive-CareAI/src/assets/man2.png);
+    background-image: url(../../assets/man2.png);
     background-size: contain; /* keeps the proportions */
     background-position: top;
     background-repeat: no-repeat;
