@@ -113,7 +113,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url(/Olive-CareAI/src/assets/logobg.png);
+    background-image: url(../../assets/logobg.png);
     background-size: 441px;
     background-repeat: no-repeat;
     background-position: center;
