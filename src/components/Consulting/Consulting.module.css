@@ -1,0 +1,191 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.consultingSection {
+  background-color: #f9fdff;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Top Label */
+.headerTag {
+  display: inline-block;
+  border: 1px solid #8fd2c5;
+  border-radius: 50px;
+  padding: 6px 18px;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-family: "Manrope", sans-serif;
+}
+
+/* Heading */
+.heading {
+  font-size: 33px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* Subheading */
+.subtext {
+  color: #4c4b4b;
+  font-weight: 400;
+  font-size: 19px;
+  margin-bottom: 40px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Carousel Layout */
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 27px;
+  padding-bottom: 10px;
+}
+
+/* Arrow Buttons — circular with subtle border shadow */
+.arrowButton {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  height: 46px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.arrowButton:hover {
+  transform: scale(1.05);
+}
+
+/* Doctor Card */
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 600px;
+  height: 235px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Smooth fade animation */
+.fade {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.docImage {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.textContent {
+  text-align: left;
+}
+
+.quote {
+  color: #4c4b4b;
+  font-size: 18.5px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 385px;
+}
+
+.name {
+  font-size: 19px;
+  padding-bottom: 7px;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.hospital {
+  font-size: 17px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #4c4b4b;
+}
+
+/* Mobile Responsive Adjustments */
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .consultingSection {
+    padding: 55px 20px;
+  }
+
+  .arrowButton {
+    height: 30px;
+    width: 30px;
+    padding: 2px;
+  }
+
+  .card {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    max-width: 250px;
+    padding: 20px;
+  }
+
+  .docImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .heading {
+    font-size: 21px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  .headerTag {
+    font-size: 13px;
+  }
+
+  .subtext {
+    color: #4c4b4b;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 40px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .textContent {
+    text-align: center;
+  }
+
+  .quote {
+    font-size: 14px;
+    width: auto;
+  }
+
+  .name {
+    font-size: 15px;
+  }
+
+  .hospital {
+    font-size: 13px;
+  }
+}

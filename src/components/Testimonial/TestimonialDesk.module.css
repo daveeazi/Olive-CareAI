@@ -60,7 +60,7 @@
 /* Each Card */
 .card {
   flex: 0 0 calc(100% / 3 - 8px); /* Fit all 3 cards */
-  height: 180px;
+  height: 355px;
   border-radius: 20px;
   padding: 10px;
   box-sizing: border-box;
@@ -69,8 +69,8 @@
 }
 
 .image {
-  width: 95px;
-  height: 70px;
+  width: 210px;
+  height: 155px;
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 8px;
@@ -200,7 +200,7 @@
     font-family: 'Inter', sans-serif;
   }
   .wrapperBox {
-    width: 940px; /* 3 cards comfortably */
+    width: 1000px; /* 3 cards comfortably */
     height: 410px;
     border-radius: 35px;
     margin-top: 40px;
@@ -228,7 +228,7 @@
     padding-bottom: 10px;
   }
   .card {
-    height: 330px;
+    height: 355px;
     flex: 0 0 calc(30% - 13px); /* Adjusted for 3 cards */
     padding: 20px;
     border-radius: 25px;
@@ -239,14 +239,14 @@
     transform: translateY(-8px);
   }
   .image {
-    width: 160px;
-    height: 120px;
+    width: 210px;
+    height: 155px;
     margin-bottom: 16px;
   }
   .text {
     font-size: 14px;
     line-height: 150%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .name {
     font-size: 14px;

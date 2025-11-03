@@ -3,26 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/** @format */
+
 .whatsappSection {
   padding: 24px 0;
   text-align: center;
   font-family: "Manrope", sans-serif;
   padding-top: 35px;
-  /* padding-bottom: 1135px; */
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .carousel {
   overflow: hidden;
   width: 100%;
-}
-
-.carouselItem {
-  display: none;
-}
-
-.carouselItem.active {
-  display: block;
 }
 
 .title {
@@ -41,7 +34,12 @@
   margin-bottom: 16px;
 }
 
-/* WhatsApp card */
+/* Only card slides now */
+.cardWrapper {
+  position: relative;
+  height: 200px;
+}
+
 .card {
   background-color: #f4faff;
   border-radius: 16px;
@@ -53,8 +51,71 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
-  position: relative;
-  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Smooth fade + horizontal movement */
+.fadeSlideRight {
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeInRight 0.6s ease;
+}
+
+.fadeSlideLeft {
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeInLeft 0.6s ease;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Card Number Circle */
+.cardNumber {
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  width: 19px;
+  height: 18px;
+  margin-left: 8px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  z-index: 5;
 }
 
 .textContent {
@@ -64,35 +125,47 @@
 }
 
 .chatTitle {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 17.8px;
+  font-family: "Monrope", sans-serif;
+  font-weight: 500;
   color: #000;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .description {
   font-size: 13px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   color: #666;
   margin-bottom: 12px;
   max-width: 180px;
 }
 
 .ctaButton {
-  color: #10530C;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  color: #10530c;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   font-size: 13px;
   border: none;
   background: none;
   cursor: pointer;
   padding: 0;
+  text-decoration: none;
 }
 
 .ctaButton:hover {
   text-decoration: underline;
 }
 
-/* Phone image + background shape */
+/* Remove underline on mobile tap or focus */
+@media (hover: none) and (pointer: coarse) {
+  .ctaButton:active,
+  .ctaButton:focus {
+    text-decoration: none !important;
+  }
+}
+
+/* Image setup */
 .imageContainer {
   position: relative;
   display: flex;
@@ -106,8 +179,8 @@
   content: "";
   position: absolute;
   width: 125px;
-  height: 85px; /* half the width for a perfect 180° arc */
-  background-color: #86C4FB;
+  height: 85px;
+  background-color: #86c4fb;
   border-top-left-radius: 130px;
   border-top-right-radius: 130px;
   bottom: 0;
@@ -144,7 +217,59 @@
   background-color: #2e7d32;
 }
 
-/* 🖥️ Desktop-only styles */
+/* Bot styling */
+.botContainer::before {
+  display: none;
+}
+
+.botContainer {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 100%;
+  z-index: 2;
+}
+
+.botImage {
+  position: relative;
+  left: 18px;
+  top: 28px;
+  width: 120px;
+  height: 130px;
+  bottom: 0;
+  z-index: 3;
+}
+
+/* --- Care card (Get Care Instantly) adjustments --- */
+.careCard {
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+}
+
+.careCard .imageContainer::before {
+  display: none;
+}
+
+.careCard .textContent,
+.careCard .chatTitle,
+.careCard .description,
+.careCard .ctaButton {
+  color: #FFFFFF !important;
+}
+
+.chatTitle {
+  padding-top: 12.5px;
+}
+
+.careCard .ctaButton:hover {
+  color: #FFFFFF !important;
+}
+
+/* Desktop-only styles */
 @media (min-width: 900px) {
   .whatsappSection {
     padding: 35px 0;
@@ -181,7 +306,7 @@
   .cardsContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 22px;
     justify-content: center;
     align-items: start;
     width: 750px;
@@ -191,21 +316,42 @@
   /* First card spans the full width */
   .card:first-child {
     grid-column: 1 / -1;
-    width: 96%;
-    max-width: 940px;
+    width: 790px;
+    height: 230px;
+    padding-right: 55px;
+    padding-left: 30px;
   }
 
   .card {
     background-color: #f4faff;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 16px;
-    height: 220px;
+    height: 302px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     position: relative;
+    width: 376px;
+  }
+
+  .cardNumber {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    z-index: 5;
   }
 
   .textContent {
@@ -219,21 +365,22 @@
     font-size: 21px;
     font-weight: 500;
     color: #000000;
-    margin-bottom: 4px;
+    margin-bottom: 9px;
   }
 
   .description {
     font-size: 14px;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: #4C4B4B;
     margin-bottom: 12px;
-    max-width: 180px;
+    max-width: 355px;
   }
 
   .ctaButton {
     color: #10530C;
     font-family: "Inter", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 12px;
     border: none;
     background: none;
@@ -272,11 +419,59 @@
     z-index: 0;
   }
 
+  /* Remove the blue background shape for the second card */
+  .noShape .imageContainer::before {
+    display: none;
+  }
+
   .whatsappImage {
     width: 85px;
     height: 150px;
     position: relative;
     z-index: 2;
     margin-bottom: 12px;
+  }
+
+  /* Unique style adjustments for the AI bot image */
+  .botImage {
+    width: 167px;
+    height: 185px;
+    bottom: -28px;
+    right: -17px;
+  }
+
+  /* Number Circle */
+  .numberCircle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+  }
+
+  /* Care Card background styling */
+  .careCard {
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+  }
+
+  .careCard .chatTitle,
+  .careCard .description,
+  .careCard .ctaButton {
+    color: #ffffff;
   }
 }

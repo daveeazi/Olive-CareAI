@@ -11,6 +11,7 @@ import FooterDesk from './components/Footer/FooterDesk';
 import Faq from './components/Faq/Faq';
 import Testimonial from './components/Testimonial/Testimonial';
 import TestimonialDesk from './components/Testimonial/TestimonialDesk';
+import Consult from './components/Consulting/Consulting';
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 900);
@@ -29,6 +30,7 @@ function App() {
         {isDesktop ? <WhatsappDesk /> : <Whatsapp />}
         <Offers />
         {isDesktop ? <TestimonialDesk /> : <Testimonial />}
+        <Consult />
         <Faq />
       </main>
       {isDesktop ? <FooterDesk /> : <Footer />}
