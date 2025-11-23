@@ -9,14 +9,19 @@ const Faq = () => {
 
   const faqs = [
     {
-      question: "What services do you offer ?",
+      question: "Whats OlivecareAI?",
       answer:
-        "We offer services like consultation, first response, lab test analysis, AI symptom checker.",
+        "OlivecareAI is an AI-powered health assistant designed to provide personalized medical information and support. It allows you to ask questions about symptoms, medications, lifestyle tips, and more. With advanced AI technology it proffers instant responses to help you make informed decisions about your health.",
     },
     {
-      question: "What services do you offer ?",
+      question: "How long does it take to get a response?",
       answer:
-        "We offer services like consultation, first response, lab test analysis, AI symptom checker.",
+        "We reply in less than 5 minutes.",
+    },
+    {
+      question: "How do i get started?",
+      answer:
+        "Getting started is easy. Save +15026270621 on your phone. Then go to WhatsApp. Just type in your questions or concerns, and the assistant will provide helpful insights and recommendations",
     },
     {
       question: "What services do you offer ?",

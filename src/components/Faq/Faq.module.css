@@ -111,7 +111,7 @@
   font-size: 11px; /* provided */
   color: #020202; /* provided */
   margin-top: 10px;
-  text-align: left;
+  text-align: justify;
 }
 
 /* responsive - specifically for 375px */

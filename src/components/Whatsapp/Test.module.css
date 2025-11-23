@@ -138,7 +138,7 @@
   font-weight: 400;
   color: #666;
   margin-bottom: 12px;
-  max-width: 180px;
+  max-width: 190px;
 }
 
 .ctaButton {
@@ -183,7 +183,7 @@
   background-color: #86c4fb;
   border-top-left-radius: 130px;
   border-top-right-radius: 130px;
-  bottom: 0;
+  bottom: -16px;
   right: -20px;
   z-index: 0;
 }
@@ -193,7 +193,7 @@
   height: 137px;
   position: relative;
   z-index: 2;
-  margin-bottom: 12px;
+  margin-bottom: -8px;
 }
 
 /* Dots */
@@ -234,7 +234,7 @@
 .botImage {
   position: relative;
   left: 18px;
-  top: 28px;
+  top: 10px;
   width: 120px;
   height: 130px;
   bottom: 0;
@@ -414,7 +414,7 @@
     background-color: #86c4fb;
     border-top-left-radius: 130px;
     border-top-right-radius: 130px;
-    bottom: 0;
+    bottom: -21px;
     right: -20px;
     z-index: 0;
   }
@@ -429,7 +429,7 @@
     height: 150px;
     position: relative;
     z-index: 2;
-    margin-bottom: 12px;
+    margin-bottom: -6px;
   }
 
   /* Unique style adjustments for the AI bot image */

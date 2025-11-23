@@ -48,7 +48,7 @@ const Whatsapp = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
+    const interval = setInterval(nextSlide, 10000);
     return () => clearInterval(interval);
   }, []);
 
